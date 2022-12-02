@@ -3,12 +3,32 @@
 	"tasks": [
 		{
 			"type": "cppbuild",
+			"label": "first_cpp_program project",
+			"command": "/usr/bin/clang++",
+			"args": [
+				"-g",
+				"-std=c++20",
+				"${workspaceFolder}/first_cpp_program/main.cpp",
+				"-o",
+				"${workspaceFolder}/first_cpp_program/main.exe"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/first_cpp_program"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: /usr/bin/clang++"
+		},
+		{
+			"type": "cppbuild",
 			"label": "C/C++: g++ build active file",
 			"command": "/usr/bin/g++",
 			"args": [
 				"-g",
 				"-std=c++20",
-				"${workspaceFolder}/*/*.cpp",
+				"${workspaceFolder}/configure_gcc/*.cpp",
 				"-o",
 				"${fileDirname}/rooster"
 			],
