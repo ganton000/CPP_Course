@@ -14,6 +14,21 @@ int get_input_output() {
 	return 0;
 }
 
+int get_line_of_input() {
+
+	std::string full_name;
+
+	std::cout << "Please type in your full name :";
+	std::cin.ignore(); //discards input line buffer
+
+	std::getline(std::cin,full_name);
+
+	std::cout << "Hello " << full_name << std::endl;
+
+	return 0;
+
+}
+
 int main() {
 
 	//Output
@@ -36,7 +51,13 @@ int main() {
 	//Logs
 	std::clog << "std::clog output: This is a log message" << std::endl;
 	std::cout << std::endl;
+
+
 	get_input_output();
+	std::cout << std::endl;
+
+	get_line_of_input();
+	std::cout << std::endl;
 
 	return 0;
 }
