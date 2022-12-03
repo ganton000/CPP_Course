@@ -9,7 +9,8 @@ int addNumbers(int first_num, int second_num) {
 int main() {
 
 	int firstNum = 9;
-	int secondNum {12};
+	//int secondNum {12}; also works!
+	int secondNum = {12};
 
 	int expected_sum = firstNum + secondNum;
 
