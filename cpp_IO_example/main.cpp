@@ -21,6 +21,14 @@ int get_line_of_input() {
 	std::cout << "Please type in your full name :";
 	std::cin.ignore(); //discards input line buffer
 
+	/*
+	Below method ignores newline character from previous streamsize input
+
+	Note: any time you cin >> something, it will leave a newline in the buffer. The buffer remains when you switch functions, as long as you're still using cin. If the next operation to do with cin is getline, it will read that leftover newline and seem to skip getting input
+
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+	*/
 	std::getline(std::cin,full_name);
 
 	std::cout << "Hello " << full_name << std::endl;
