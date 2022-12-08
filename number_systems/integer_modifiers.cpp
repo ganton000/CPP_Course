@@ -55,13 +55,13 @@ int main() {
 
 	float number1 {1.12345678901234567890f};
 	double number2 {1.12345678901234567890};
-	long double number3 {1.12345678901234567890L};
+	long double number3 {1.123456789012345678901234L};
 
-	std::cout << std::setprecision(20); //Control precision from std::cout
-	std::cout << "Number1: " << number1 << std::endl;
-	std::cout << "Number2: " << number2 << std::endl;
+	std::cout << std::setprecision(24); //Control precision from std::cout
+	std::cout << "Number1: " << number1 << std::endl; // Precision Float: 7
+	std::cout << "Number2: " << number2 << std::endl; // Precision Double: 17
 	std::cout << "Number3: " << number3 << std::endl;
-	std::cout << std::endl;
+	std::cout << std::endl; //Precision Long Double: 19
 
 	std::cout << "sizeof float: " << sizeof(number1) << std::endl;
 	std::cout << "sizeof double: " << sizeof(number2) << std::endl;
