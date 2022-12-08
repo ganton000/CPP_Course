@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 int main() {
 
@@ -50,6 +51,39 @@ int main() {
 	std::cout << "Signed Long Long: " << signed_long_long << ", size: " << sizeof (signed_long_long) <<std::endl;
 	std::cout << "Signed Long Long Int: " << signed_long_long_int << ", size: " << sizeof (signed_long_long_int) <<std::endl;
 	std::cout << "Unsigned Long Long Int: " << unsigned_long_long_int << ", size: " << sizeof (unsigned_long_long_int) <<std::endl;
+	std::cout << std::endl;
+
+	float number1 {1.12345678901234567890f};
+	double number2 {1.12345678901234567890};
+	long double number3 {1.12345678901234567890L};
+
+	std::cout << std::setprecision(20); //Control precision from std::cout
+	std::cout << "Number1: " << number1 << std::endl;
+	std::cout << "Number2: " << number2 << std::endl;
+	std::cout << "Number3: " << number3 << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "sizeof float: " << sizeof(number1) << std::endl;
+	std::cout << "sizeof double: " << sizeof(number2) << std::endl;
+	std::cout << "sizeof long double: " << sizeof(number3) << std::endl;
+	std::cout << std::endl;
+
+	//Use of scientific notation
+
+	double number5 {192400023};
+	double number6 {1.92400023e8};
+	double number7 {1.924e8};
+
+	std::cout << "Number5: " << number5 << std::endl;
+	std::cout << "Number6: " << number6 << std::endl;
+	std::cout << "Number7: " << number7 << std::endl;
+	std::cout << std::endl;
+
+	double number8 {0.00000000003498};
+	double number9 {3.498e-11};
+
+	std::cout << "Number8: " << number8 << std::endl;
+	std::cout << "Number9: " << number9 << std::endl;
 	std::cout << std::endl;
 
 	return 0;
