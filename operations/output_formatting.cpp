@@ -93,7 +93,7 @@ int main() {
 	std::cout << std::endl;
 	std::cout << "std::setw(num); changes width of next input/output field" << std::endl;
 	std::cout << std::endl;
-	std::cout << "std::flush; flushes the output stream to terminal" << std::endl;
+	std::cout << "std::flush; flushes the output buffer/stream to terminal (or final destination)" << std::endl;
 	std::cout << std::endl;
 	std::cout << "std::setfill(''); changes fill character" << std::endl;
 	std::cout << std::endl;
