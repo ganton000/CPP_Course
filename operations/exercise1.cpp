@@ -1,7 +1,7 @@
 #include <cmath>
 #include <iostream>
 
-int convert_celsius_to_fahrenheit(double celsius) {
+double convert_celsius_to_fahrenheit(double celsius) {
 
 	double const_var = (9.0/5);
 
