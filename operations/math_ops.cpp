@@ -4,14 +4,15 @@
 
 int get_power(int num1, int num2) {
 
-	return std::pow(num1, num1);
+	int power_res = std::pow(num1, num2);
+	return power_res;
 }
 
 int main() {
 
 
-	int num1 = 3;
-	int num2 = 2;
+	int num1 = 2;
+	int num2 = 4;
 
 	int result = get_power(num1, num2);
 
