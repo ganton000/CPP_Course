@@ -46,7 +46,13 @@ int main() {
 	std::cout << "The range (with lowest) for long double is from " << std::numeric_limits<long double>::lowest() << " to " << std::numeric_limits<long double>::max() <<std::endl;
 	std::cout << std::endl;
 
+	//Other methods
+	std::cout << "std::numeric_limits<T>::is_signed; tells us if type is signed" << std::endl;
+	std::cout << std::endl;
+	std::cout << "std::numeric_limits<T>::digits; tells us number of digits that can be represented by the type" << std::endl;
+	std::cout << std::endl;
 
+	std::cout << "Num of digits represented by long double is: " << std::numeric_limits<long double>::digits << std::endl;
 
 
 	return 0;
