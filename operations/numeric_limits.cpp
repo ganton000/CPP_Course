@@ -4,6 +4,9 @@
 
 int main() {
 
+	std::cout << "min() uses minimum positive number, lowest() uses smallest negative number" << std::endl;
+	std::cout << std::endl;
+
 	std::cout << "The range for short is from " << std::numeric_limits<short>::min() << " to " << std::numeric_limits<short>::max() << std::endl;
 	std::cout << std::endl;
 
