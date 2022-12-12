@@ -63,5 +63,22 @@ int main() {
 	int int_pi = (int)(PI);
 	std::cout << "int PI: " << int_pi << std::endl;
 
+	//overflow and underflow
+	unsigned char char_var {55}; //[0~255]
+
+	unsigned char val1 {130};
+	unsigned char val2 {131};
+
+	char_var = val1 + val2; //overflow
+
+	//Bytes reset back to 000 dec once 255 is hit.
+	std::cout << "char_var: " << static_cast<int>(char_var) << std::endl;
+
+	//Underflow
+	char_var = val1-val2;
+
+	//Bytes start from 255 and go backwards
+	std::cout << "char_var (exp -1): " << static_cast<int>(char_var) << std::endl;
+
 	return 0;
 }
