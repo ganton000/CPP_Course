@@ -42,18 +42,19 @@ int main() {
 	double a { 12.5};
 	double b { 34.6 };
 
+	//Implicit cast
 	int sum = a + b;
 	std::cout << "The sum is: " << sum << std::endl;
 
-	//implicit cast:
+	//Explicit cast:
 	sum = static_cast<int>(a) + static_cast<int>(b);
 
-	std::cout << "Cast then sum, result: " << sum << std::endl;
+	std::cout << "Explicit cast then sum, result: " << sum << std::endl;
 
 	//explicit cast: sum up then cast, same as implicit cast
 	sum = static_cast<int> (a+b);
 
-	std::cout << "Explicit cast then sum, result: " << sum << std::endl;
+	std::cout << "Sum then explicit cast, same as implicit cast, result: " << sum << std::endl;
 
 	//old style C-cast
 	//not recommended as static_cast<>() is clearer
