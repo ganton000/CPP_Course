@@ -1,5 +1,28 @@
 #include <iostream>
 
+//constinit variables get intialized at compile time
+//the different from constexpr is that constinit are not constants (can be changed)
+//constinit can only be initialized outside of main handler (main() function)
+//its created to help avoid problems with order of initialization
+// of global variables outside of main
+
+//constinit must be initialized with const or literals
+
+//const and constinit can be combined.
+
+const int val1 {33};
+constexpr int val2 {34};
+int val3 {35};
+
+//Since c++20
+constinit int age = {88};
+const constinit int age1{val1};
+
+const constinit int age2{val2};
+
+
+
+
 
 //Literals don't have a location in memory, are burnt into the binary in code.
 
