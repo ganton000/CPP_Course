@@ -72,13 +72,10 @@ int main() {
 	//the below code will throw an error
 	//constexpr int arm_count{leg_count}; //Error
 
-	//Checks at compile time
+	//Checks at compile time only
+	// cannot use runtime vars within it
 	static_assert(eye_count == 2, "eye_count variable is not equal to 2");
 	static_assert(PI == 3.14, "PI variable is not equal to 3.14");
-
-
-
-
 
 	return 0;
 }
