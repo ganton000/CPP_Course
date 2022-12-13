@@ -39,5 +39,10 @@ int main() {
 	value = static_cast<unsigned short int>(value << 4);
 	std::cout << "value: " << std::bitset<16>(value) << ", dec: " << value << " [After shift 4 bit position left] " << std::endl;
 
+	// Rules of bit shifting
+	// shifting right divides by 2^n
+	// Shift left multiples by 2^n
+	//Rule breaks if 1s are shifted away on either end
+
 	return 0;
 }
