@@ -15,10 +15,10 @@ constexpr int val2 {34};
 int val3 {35};
 
 //Since c++20
-constinit int age = {88};
-const constinit int age1{val1};
+//constinit int age = {88};
+//const constinit int age1{val1};
 
-const constinit int age2{val2};
+//const constinit int age2{val2};
 
 
 
