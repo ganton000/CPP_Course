@@ -52,5 +52,28 @@ int main() {
 	var &= ~( mask_bit_0 | mask_bit_2 | mask_bit_4 | mask_bit_6 );
 	std::cout << std::setw(COLUMN_WIDTH) << "var: " << std::setw(COLUMN_WIDTH) << std::bitset<8>(var) << std::endl;
 
+	//Checking bits
+
+	//Check bit at position 5
+	std::cout << "Check bit at position 5" << std::endl;
+	std::cout << std::setw(COLUMN_WIDTH) << "var: " << std::setw(COLUMN_WIDTH) << std::bitset<8>(( (var & mask_bit_5 ) >> 5 )) << std::endl;
+	std::cout << std::setw(COLUMN_WIDTH) << "Does bit in position 5 exist?: " << static_cast<bool>(( (var & mask_bit_5 ) >> 5 )) << std::endl;
+
+
+	//Check bit at position 4
+	std::cout << "Check bit at position 4" << std::endl;
+	std::cout << std::setw(COLUMN_WIDTH) << "var: " << std::setw(COLUMN_WIDTH) << std::bitset<8>(( (var & mask_bit_4 ) >> 4 )) << std::endl;
+	std::cout << std::setw(COLUMN_WIDTH) << "Does bit in position 4 exist?: " << static_cast<bool>(( (var & mask_bit_4 ) >> 4 )) << std::endl;
+
+	//Toggling bits (XOR ^ operator)
+
+	//Toggle bit at position 4
+	std::cout << "Toggle bit at position 4" << std::endl;
+	std::cout << std::setw(COLUMN_WIDTH) << "Start var: " << std::bitset<8>(var) << std::endl;
+	var ^= mask_bit_4;
+	std::cout << std::setw(COLUMN_WIDTH) << "var: " << std::bitset<8>(var) << std::endl;
+
+
+
 	return 0;
 }
