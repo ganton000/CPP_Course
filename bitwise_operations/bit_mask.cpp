@@ -2,6 +2,12 @@
 #include <bitset>
 #include <iomanip>
 
+void use_options_v1(unsigned char flags, unsigned char mask_bit, unsigned char shift_amount) {
+	std::cout << std::boolalpha;
+	std::cout << "This bit is " << std::bitset<8>((flags & mask_bit) >> shift_amount ) << ", do something with it!" << std::endl;
+	std::cout << "This bit is set to " << static_cast<bool>((flags & mask_bit) >> 0 ) << std::endl;
+}
+
 int main() {
 
 	//Highlights position for bit of interest with a 1
@@ -76,6 +82,10 @@ int main() {
 	std::cout << std::setw(COLUMN_WIDTH) << "Start var: " << std::bitset<8>(var) << std::endl;
 	var ^= mask_bit_4;
 	std::cout << std::setw(COLUMN_WIDTH) << "var: " << std::bitset<8>(var) << std::endl;
+
+	std::cout << "--------------------------" <<std::endl;
+
+	use_options_v1((mask_bit_2 | mask_bit_3 | mask_bit_4 ), mask_bit_2, 2);
 
 
 
