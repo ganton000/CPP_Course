@@ -24,6 +24,7 @@ unsigned int sum_up_to_99(){
 
 void multiple_decl_for_loop() {
 
+	//size of x,y are also size_t
 	for (size_t i{0}, x{5}, y{22}; y > 15; ++i, x+=5, y-=1){
 		std::cout << "i: " << i << ", x: " << x << ", y: " << y << std::endl;
 	}
