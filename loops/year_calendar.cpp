@@ -8,7 +8,7 @@ We have made it a requirement to get the first week day of the year from the use
 #include <iomanip>
 using namespace std;
 
-constexpr int COL_WIDTH{5};
+constexpr unsigned int COL_WIDTH{5};
 
 bool is_leap_year(int year){
 
@@ -21,8 +21,8 @@ void create_calendar_month(int month, int start_day, bool is_leap){
 
 	if (is_leap) days_in_month[1] = 29;
 
-	int remainder = (start_day-1) ? 7-start_day : 0;
-	for (int i{1}; i <= days_in_month[month]; ++i) {
+	int remainder = (start_day-1) ? (7-start_day+1) : 0;
+	for (size_t i{1}; i <= days_in_month[month]; ++i) {
 		(i%7 == remainder) ? (cout << setw(COL_WIDTH) << i << endl) :
 					 (cout << setw(COL_WIDTH) << i << " ");
 	}
@@ -32,8 +32,8 @@ void create_calendar_month(int month, int start_day, bool is_leap){
 int main() {
 
 	// initial variables
-	int year{};
-	int first_day{};
+	unsigned int year{};
+	unsigned int first_day{};
 
 	string months_of_year[] = {"January", "February", "March", "April", "May",
 				"June", "July", "August", "September", "October", "November", "December"};
@@ -51,7 +51,7 @@ int main() {
 
 	cout << "Calendar for year " << year << endl;
 
-	for (int i{}; i < 12; ++i) {
+	for (size_t i{}; i < 12; ++i) {
 		cout << setw(COL_WIDTH*3) << "-- " << months_of_year[i] << " " << year << " --" << endl;
 
 		for (string day_of_week: days_of_week) {
@@ -61,7 +61,7 @@ int main() {
 		}
 
 		//create space for start day
-		for (int i{1}; i < first_day; ++i) {
+		for (size_t i{1}; i < first_day; ++i) {
 			cout << "      ";
 		}
 
