@@ -46,5 +46,13 @@ int main() {
 	multiple_decl_for_loop();
 	std::cout << std::endl;
 
+	// (C++20) loop with initializer/helper vars
+	// range-based for loop
+
+	for (auto multiplier{4}; int value: {1,2,3,4,5,6,7,8,9,10}) {
+
+		std::cout << (value*multiplier) << " ";
+	}
+
 	return 0;
 }
