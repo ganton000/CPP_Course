@@ -51,6 +51,11 @@ int main() {
 		} else {
 			end = true;
 		}
+
+		std::cout << std::endl;
 	}
+
+	std::cout << "Done helping out. Goodbye!" << std::endl;
+
 	return 0;
 }
