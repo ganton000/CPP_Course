@@ -1,6 +1,22 @@
 //Arrays store elements of the same type only
 #include <iostream>
 
+void generate_rand_num() {
+
+	//using std::rand() generates a number between 0 and RAND_MAX
+
+	std::cout << std::endl;
+	std::cout << "RAND_MAX: " << RAND_MAX << std::endl;
+	std::cout << std::endl;
+
+	int random_num = std::rand();
+	std::cout << "number (before seed): " << random_num << std::endl;
+
+	random_num = std::rand();
+	std::cout << "number (before seed): " << random_num << std::endl;
+
+
+}
 int main() {
 
 	int scores[10]; //Array storing 10 integers
@@ -39,6 +55,23 @@ int main() {
 	std::cout << "message: " << message3 << std::endl;
 	std::cout << "size: " << std::size(message3) << std::endl;
 
+	generate_rand_num();
+
+	//Time since Jan 1st, 1970 at 00:00:00 AM
+	std::cout << std::endl;
+	std::cout << "std::time(0): " << std::time(0) << std::endl;
+	std::cout << std::endl;
+
+	//Adding seeds to a program
+	//Seeds tell compiler to re-process/generate the function/code/program
+	//Seed-random value based on each new second in time
+	std::srand(std::time(0));
+
+	int random_num {};
+	for (size_t i{}; i < 5; ++i) {
+		random_num = (std::rand()%15)+1; // [1~15]
+		std::cout << "number (after seed): " << random_num << std::endl;
+	}
 
 	return 0;
 }
