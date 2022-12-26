@@ -104,12 +104,19 @@ int main() {
 
 	int house_block [2][3][2] {
 		{
-			{1,2}, {3,4}, {5,6}
+			{1,}, {3,4}, {5,6} //remaining elements is autofilled with 0 (i.e. house_block[0][0][1] = 0)
 		},
 		{
 			{7,8}, {9,10}, {11,12}
 		},
 	};
+
+	//int packages2 [] [num_cols] will work, compiler will deduce first dimension
+	//but int packages2 [] [] will throw a compile error
+	// for any n-dim arr, the first dimension will be deduced by compiler
+
+	std::cout << std::endl;
+	std::cout << "house_block[0][0][1]: " << house_block[0][0][1] << std::endl;
 
 	return 0;
 }
