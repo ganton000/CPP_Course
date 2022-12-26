@@ -74,5 +74,18 @@ int main() {
 		std::cout << "number (after seed): " << random_num << std::endl;
 	}
 
+	std::cout << std::endl;
+	//Declaring a 2d array
+	int packages [4][3]; //Occupies 48 bytes in memory
+
+	// 4*3*4bytes = 48
+	std::cout << "Size of packages: " << sizeof(packages) << std::endl;
+
+	//Element count in packages will be 4
+	//Because packages contains 4 rows and 3 columns,
+	//we say that packages contains 4 items; each of which contains 3 items
+
+	std::cout << "Element count in packages: " << std::size(packages) << std::endl;
+
 	return 0;
 }
