@@ -44,7 +44,7 @@ int get_rand_num() {
 }
 
 
-void play_round(std::string name, char play_again) {
+void play_round(char *name, char play_again) {
 
 	while ((play_again == 'Y') || (play_again == 'y')) {
 
@@ -64,12 +64,13 @@ void play_round(std::string name, char play_again) {
 
 int main() {
 
-	std::string name{};
+	const int max_length{25};
+	char name[max_length] {};
 	char play_again {'Y'};
 
 	std::cout << "I see you have come to be told your fortune!" << std::endl;
 	std::cout << "Please tell me your name: " << std::endl;
-	std::cin >> name;
+	std::cin.getline(name, max_length);
 
 	play_round(name, play_again);
 
