@@ -1,5 +1,6 @@
 //Arrays store elements of the same type only
 #include <iostream>
+#include <ctime>
 
 void generate_rand_num() {
 
