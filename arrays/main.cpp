@@ -104,7 +104,7 @@ int main() {
 
 	int house_block [2][3][2] {
 		{
-			{1,}, {3,4}, {5,6} //remaining elements is autofilled with 0 (i.e. house_block[0][0][1] = 0)
+			{1,2}, {3,4}, {5,6} //remaining elements is autofilled with 0 (i.e. house_block[0][0][1] = 0)
 		},
 		{
 			{7,8}, {9,10}, {11,12}
@@ -117,6 +117,44 @@ int main() {
 
 	std::cout << std::endl;
 	std::cout << "house_block[0][0][1]: " << house_block[0][0][1] << std::endl;
+
+	//const size_t name_length{10};
+
+	////does not guarantee null characters
+	//char members[] [name_length] {
+	//	{'J','o','h','n'},
+	//	{'S','a','m','u','e','l'}
+	//};
+
+	//for (size_t i{0}; i < std::size(members); ++i) {
+	//	std::cout << members[i] << std::endl;
+	//}
+
+	//std::cout << std::endl;
+
+	//for (size_t i{0}; i < std::size(members); ++i) {
+	//	for (size_t j{0}; i < std::size(members[i]); ++j) {
+	//		std::cout << members[i][j];
+	//	}
+	//	std::cout << std::endl;
+	//}
+
+	//std::cout << std::endl;
+
+	//better way
+	//char members1[][10] {
+	//	"John",
+	//	"Samuel",
+	//	"Rashid",
+	//	"Rodriguez"
+	//};
+
+	//for (size_t i{0}; i < std::size(members1); ++i) {
+	//	for (size_t j{0}; i < std::size(members1[i]); ++j) {
+	//		std::cout << members1[i][j];
+	//	}
+	//	std::cout << std::endl;
+	//}
 
 	return 0;
 }
