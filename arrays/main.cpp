@@ -76,7 +76,13 @@ int main() {
 
 	std::cout << std::endl;
 	//Declaring a 2d array
-	int packages [4][3]; //Occupies 48 bytes in memory
+	//Occupies 48 bytes in memory
+	int packages [4][3] {
+		{1,2,3},
+		{4,5,6},
+		{7,8,9},
+		{10,11,12}
+	};
 
 	// 4*3*4bytes = 48
 	std::cout << "Size of packages: " << sizeof(packages) << std::endl;
@@ -92,9 +98,18 @@ int main() {
 	for (size_t i{0}; i < std::size(packages); ++i) {
 
 		for (size_t j{0}; j < std::size(packages[i]); ++j) {
-			std::cout << "Item (" << i << "," << j << ") :" << packages[i][j] << std::endl;
+			std::cout << "Item (" << i << "," << j << ") : " << packages[i][j] << std::endl;
 		}
 	}
+
+	int house_block [2][3][2] {
+		{
+			{1,2}, {3,4}, {5,6}
+		},
+		{
+			{7,8}, {9,10}, {11,12}
+		},
+	};
 
 	return 0;
 }
