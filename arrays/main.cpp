@@ -87,5 +87,14 @@ int main() {
 
 	std::cout << "Element count in packages: " << std::size(packages) << std::endl;
 
+	std::cout << std::endl;
+
+	for (size_t i{0}; i < std::size(packages); ++i) {
+
+		for (size_t j{0}; j < std::size(packages[i]); ++j) {
+			std::cout << "Item (" << i << "," << j << ") :" << packages[i][j] << std::endl;
+		}
+	}
+
 	return 0;
 }
