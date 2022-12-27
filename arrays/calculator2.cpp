@@ -3,8 +3,14 @@
 
 constexpr int modulo {200};
 
-void start_round(int num1, int num2, char op) {
+int start_round(int num1, int num2, char op) {
+	int guess{};
+
 	std::cout << "What's the result of " << num1 << op << num2 << " :" << std::endl;
+
+	std::cin >> guess;
+
+	return guess;
 };
 
 size_t generate_rand_num(int modulo) {
@@ -47,8 +53,6 @@ bool play_again() {
 
 void play_game(bool continue_play) {
 
-	int guess{};
-
 	while (continue_play) {
 
 		// initialize values
@@ -56,8 +60,7 @@ void play_game(bool continue_play) {
 		int right_op = generate_rand_num(modulo);
 		char op = choose_operator(generate_rand_num(3));
 
-		start_round(left_op, right_op, op);
-		std::cin >> guess;
+		int guess = start_round(left_op, right_op, op);
 
 		int result = calculate_result(left_op, right_op, op);
 		check_guess(guess, result);
