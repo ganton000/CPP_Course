@@ -47,6 +47,24 @@ int main() {
 	p_int = &new_var;
 	std::cout << "p_int is now pointing to new_var (memory): " << p_int << std::endl;
 	std::cout << "Dereferencing p_int: " << *p_int << " equals value of new_var: " << new_var << std::endl;
+	std::cout << std::endl;
+
+	// Declaring pointers to char
+	char *p_char_var {nullptr};
+	char char_var {'A'};
+
+	p_char_var = &char_var;
+
+	std::cout << "Value stored in p_char_var is: " << *p_char_var << std::endl;
+	std::cout << std::endl;
+
+	// Can initialize char pointers to C-string literals!
+
+	const char *p_message {"Hello World!"};
+
+	std::cout << "C-string literal char pointer: " << p_message << " with value " << *p_message << std::endl;
+	std::cout << std::endl;
+
 
 	return 0;
 }
