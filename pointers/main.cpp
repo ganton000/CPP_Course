@@ -4,7 +4,7 @@ Pointers are a special kind of variable that store the addresses of other variab
 
 #include <iostream>
 #include <iomanip>
-
+#include <cstdio>
 
 int main() {
 
@@ -35,7 +35,10 @@ int main() {
 	int_var = 50;
 	std::cout << "Reassigned int_var: " << int_var << std::endl;
 	std::cout  << "p_int (Address in memory): " << p_int << std::endl;
+	std::cout  << "p_int (Address in memory in dec format): " << std::endl;
+	//printf("ptr = %lld\n", reinterpret_cast<long long>(p_int));
 	std::cout << std::endl;
+
 
 	std::cout << "Address of p_int pointer (&p_int): " << (&p_int) << std::endl;
 	std::cout << std::endl;
@@ -65,6 +68,23 @@ int main() {
 	std::cout << "C-string literal char pointer: " << p_message << " with value " << *p_message << std::endl;
 	std::cout << std::endl;
 
+	// Arrays of pointers to char (c-strings)
+
+	const char *predictions [] {
+		"prediction 1",
+		"prediction 2",
+		"prediction 3"
+	};
+
+	std::cout << "char pointer arr, predictions: " << predictions << std::endl;
+	std::cout << "*predictions: " << *predictions << std::endl;
+	std::cout << "&predictions: " << &predictions << std::endl;
+	std::cout << "predictions[0]: " << predictions[0] << std::endl;
+	std::cout << "**predictions: " << **predictions << std::endl;
+	std::cout << "*predictions[0]: " << *predictions[0] << std::endl;
+	std::cout << "&*predictions: " << &*predictions << std::endl;
+	std::cout << "&predictions[0]: " << &predictions[0] << std::endl;
+	std::cout << std::endl;
 
 	return 0;
 }
