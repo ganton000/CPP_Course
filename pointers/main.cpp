@@ -86,5 +86,49 @@ int main() {
 	std::cout << "&predictions[0]: " << &predictions[0] << std::endl;
 	std::cout << std::endl;
 
+	int var3 {50};
+	int *new_ptr {&var3};
+
+	std::cout << "var3: " << var3 << std::endl;
+	std::cout << "set *new_ptr {&var3}" << std::endl;
+	std::cout << "*new_ptr: " << *new_ptr << std::endl;
+	std::cout << "new_ptr: " << new_ptr << std::endl;
+	std::cout << std::endl;
+
+	*new_ptr = 40;
+	std::cout << "set *new_ptr = 40;" << std::endl;
+	std::cout << "*new_ptr: " << *new_ptr << std::endl;
+	std::cout << "var3: " << var3 << std::endl;
+	std::cout << std::endl;
+
+	int var4{100};
+	std::cout << "init var4 = 100;" << std::endl;
+	std::cout << "set new_ptr = &var4" << std::endl;
+	new_ptr = &var4;
+	std::cout << "*new_ptr: " << *new_ptr << std::endl;
+	std::cout << "new_ptr: " << new_ptr << std::endl;
+	std::cout << std::endl;
+
+
+	/*
+	Will go over:
+
+	const int *ptr ::: cannot modify value through p_var
+	BUT you can point to other memory address
+
+	int* const p_var ::: this is a const pointer, cannot point to another memory address! Now this can point to a non-const variable!
+
+	cont int* const p_var ::: can't change either the pointer or the data in the pointer.
+	*/
+
+	int number{5}; //not constant
+
+	std::cout << "number: " << number << std::endl;
+	std::cout <<"&number: " << &number << std::endl;
+
+	number += 7;
+	std::cout << "number +=7: " << number << std::endl;
+	std::cout << "&number " << &number << std::endl;
+
 	return 0;
 }
