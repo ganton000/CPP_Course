@@ -230,5 +230,33 @@ int main() {
 		"Sam Ali"
 	};
 
+	//Differences between pointers and arrays
+	/*
+	Array name can be treated as pointer to first element of the array
+	And so when stored as a pointer, can use angle brackets or derefencing to grab its value! BUT... it is not a real pointer
+	*/
+
+	int scores[10] {1,2,3,4,5,6,7,8,9,10};
+	int *p_score {scores};
+
+	std::cout << "scores: " << scores << std::endl;
+	std::cout << "p_score: " << p_score << std::endl;
+	std::cout << "&scores[0]: " << &scores[0] << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "*scores: " << *scores << std::endl;
+	std::cout << "scores[0]: " << scores[0] << std::endl;
+	std::cout << "*p_score: " << *p_score << std::endl;
+	std::cout << "p_score[0]: " << p_score[0] << std::endl;
+	std::cout << std::endl;
+
+	int number2 {21};
+
+	//scores = &number2; //compile error, this "pointer" can be viewed as const
+
+	//size(p_score); //compile error, pointers can't deduce size but arrays can
+
+
+
 	return 0;
 }
