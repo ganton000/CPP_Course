@@ -129,6 +129,35 @@ int main() {
 	number += 7;
 	std::cout << "number +=7: " << number << std::endl;
 	std::cout << "&number " << &number << std::endl;
+	std::cout << std::endl;
+
+
+	int number3 {632};
+	//can't modify number3 through p_number3
+	//but can modify number3 directly
+	const int *p_number3 {&number3};
+
+	std::cout << &p_number3 << std::endl;
+
+	// *p_number3 = 444; // compile error
+
+	//Although can't change what's pointed to by p_number3
+	//can still change where it's pointing
+	int number4 {872};
+	p_number3 = &number4;
+
+	/*
+	* const ptrs can't have memory address changed
+
+	and const * ptrs can't have dereferenced value (ptr value) changed.
+
+	const * const ptr locks both.
+
+
+	Note: can have a * const ptr to non-const data,
+	a pointer being const doesn't force data to be const!
+	*/
+
 
 	return 0;
 }
