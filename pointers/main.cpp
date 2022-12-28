@@ -190,7 +190,45 @@ int main() {
 	var5 = {200};
 
 	std::cout << *p_var5 << std::endl;
+	std::cout << std::endl;
 
+
+	//Array of const pointer to const char
+
+	const char *students [] {
+		"Daniel Gray",
+		"Tuna Philbe",
+		"Kumar Singh",
+		"Sam Ali"
+	};
+
+	std::cout << "Printing out the students: " << std::endl;
+	for (const char *student: students) {
+		std::cout << student << std::endl;
+	};
+	std::cout << std::endl;
+
+	//These values cannot be modified as they are type const char
+	// But can reassign students!
+	const char *new_student {"Bob Bob"};
+
+	students[0] = new_student;
+
+
+	std::cout << "Printing out the students: " << std::endl;
+	for (const char *student: students) {
+		std::cout << student << std::endl;
+	};
+	std::cout << std::endl;
+
+	//To prevent mutating use const char * const
+
+	const char * const students1 [] {
+		"Daniel Gray",
+		"Tuna Philbe",
+		"Kumar Singh",
+		"Sam Ali"
+	};
 
 	return 0;
 }
