@@ -3,6 +3,7 @@ Pointers are a special kind of variable that store the addresses of other variab
 */
 
 #include <iostream>
+#include <iomanip>
 
 
 int main() {
@@ -33,8 +34,19 @@ int main() {
 
 	int_var = 50;
 	std::cout << "Reassigned int_var: " << int_var << std::endl;
-	std::cout << "p_int (Address in memory): " << p_int << std::endl;
+	std::cout  << "p_int (Address in memory): " << p_int << std::endl;
 	std::cout << std::endl;
+
+	std::cout << "Address of p_int pointer (&p_int): " << (&p_int) << std::endl;
+	std::cout << std::endl;
+
+	//Derefencing a pointer
+	//Act of reading value through a pointer (reading the value contained in the address)
+
+	int new_var{99};
+	p_int = &new_var;
+	std::cout << "p_int is now pointing to new_var (memory): " << p_int << std::endl;
+	std::cout << "Dereferencing p_int: " << *p_int << " equals value of new_var: " << new_var << std::endl;
 
 	return 0;
 }
