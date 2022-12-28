@@ -137,8 +137,14 @@ int main() {
 	//but can modify number3 directly
 	const int *p_number3 {&number3};
 
+	std::cout << "const int *p_number3 pointing to number3 {632}: " << std::endl;
 	std::cout << &p_number3 << std::endl;
 
+	number3 = 500;
+	std::cout << "changing value number3 to 500: " << std::endl;
+	std::cout << "*p_number3: " << *p_number3 << std::endl;
+	std::cout << "&p_number3: " << &p_number3 << std::endl;
+	std::cout << std::endl;
 	// *p_number3 = 444; // compile error
 
 	//Although can't change what's pointed to by p_number3
@@ -156,7 +162,34 @@ int main() {
 
 	Note: can have a * const ptr to non-const data,
 	a pointer being const doesn't force data to be const!
+
+
+	Also a const int* ptr can point to non-const data.
+	The data pointed to is const, i.e. derefencing and assigning will not work.
+	But the data itself is non-const, as it cannot be changed.
 	*/
+
+	int num7 {982};
+
+	int * const pnum7 {&num7};
+
+	std::cout << "pnum7: " << pnum7 << std::endl;
+	std::cout << "*pnum7: " << *pnum7 << std::endl;
+
+	*pnum7 = 500;
+	std::cout << "Changing value pointed to through pnum7 pointer: " << std::endl;
+	std::cout << "*pnum7: " << *pnum7 << std::endl;
+
+	std::cout << "num7: " << num7 << std::endl;
+	std::cout << std::endl;
+
+	int var5 {100};
+	const int * const p_var5 {&var5};
+	std::cout << *p_var5 << std::endl;
+
+	var5 = {200};
+
+	std::cout << *p_var5 << std::endl;
 
 
 	return 0;
