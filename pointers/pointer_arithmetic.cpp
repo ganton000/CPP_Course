@@ -1,3 +1,7 @@
+/*
+Pointer arithmetic implies we're doing operations on the pointer/array to move ahead or backwards in position of index
+*/
+
 #include <iostream>
 
 
