@@ -57,5 +57,9 @@ int main () {
 
 	std::cout << std::endl;
 
+	scores[1] = 31;
+	*(scores +1) = 33;
+	std::cout << scores[1] << std::endl;
+
 	return 0;
 }
