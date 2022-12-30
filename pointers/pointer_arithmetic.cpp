@@ -8,7 +8,7 @@ Pointer arithmetic implies we're doing operations on the pointer/array to move a
 
 int main () {
 
-	int scores[] {11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+	int scores[] {110, 12, 13, 14, 15, 16, 17, 18, 19, 20};
 
 	int *p_score {scores};
 
@@ -64,6 +64,16 @@ int main () {
 	scores[1] = 31;
 	*(scores +1) = 33;
 	std::cout << scores[1] << std::endl;
+
+	//Distance between arrays
+
+	int *ptr1 {scores+0};
+	int *ptr2 {scores+8};
+
+	std::cout << "pointer2 - pointer1: " << ptr2-ptr1 << std::endl; // 8
+
+	std::ptrdiff_t pos_diff = ptr2 - ptr1;
+	std::cout << "Size of std::ptrdiff_t: " << sizeof(std::ptrdiff_t) << std::endl;
 
 	return 0;
 }
