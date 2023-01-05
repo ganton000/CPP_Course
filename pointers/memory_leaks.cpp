@@ -27,5 +27,30 @@ int main() {
 		}
 	}
 
+	// Calling delete on a nullptr is OK
+
+	int *p_num {}; //initialized to nullptr
+	delete p_num;
+
+	// So no need to overdo something as below:
+	if (p_num) {
+		delete p_num;
+		p_num = nullptr;
+	}
+
+	int *p_number1 {new int {55}};
+
+	// Should delete and reset here
+	p_number1 = new int{44}; // memory with int {55} leaked as it lives on the heap (dynamically allocated)
+
+	{
+		int *p_number2 { new int {57} };
+	}
+
+	//Memory with int {57} leaked, as p_number2 is locally scoped
+	// the access to the memory address still exists but is no longer
+	// accessible by the program
+
+
 	return 0;
 }
