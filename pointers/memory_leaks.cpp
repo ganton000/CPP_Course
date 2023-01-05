@@ -19,6 +19,7 @@ int main() {
 
 		int *lots_of_ints2 { new(std::nothrow) int [100000000000000000] };
 
+		// if new fails, will get nullptr returned
 		if (lots_of_ints2 == nullptr) {
 			std::cout << "Memory allocation failed" << std::endl;
 		} else {
