@@ -13,7 +13,18 @@ Text loads the actual binary of the program
 
 int main() {
 
+
+	int num {22}; //Stack
+
+	int *p_num0 = &num;
+
 	int *p_num{nullptr};
+
+	// writing into unitialized pointer can lead to errors
+	// as the memory allocated to it can be any address from OS
+
+	int *bad_ptr; // don't do this
+
 
 	// Dynamically allocates space for a single int on the heap
 	// This memory belongs to the program now and system can't use it
