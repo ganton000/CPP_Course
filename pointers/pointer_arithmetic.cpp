@@ -75,5 +75,6 @@ int main () {
 	std::ptrdiff_t pos_diff = ptr2 - ptr1;
 	std::cout << "Size of std::ptrdiff_t: " << sizeof(std::ptrdiff_t) << std::endl;
 
+
 	return 0;
 }
