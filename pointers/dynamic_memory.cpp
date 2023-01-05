@@ -51,6 +51,12 @@ int main() {
 	delete p_num2;
 	p_num2 = nullptr;
 
+	if (p_num2 != nullptr) {
+		std::cout << "p_num2 - " << p_num2 << " - " << *p_num2 << std::endl;
+	} else {
+		std::cerr << "WARNING: Trying to use an invalid pointer" << std::endl;
+	}
+
 	// very bad to call delete twice on a pointer!!!
 
 	return 0;
